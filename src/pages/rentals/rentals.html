@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-toolbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <img class="main-logo" src="https://www.tejastravels.com/images/logo.png" alt="Logo"/>
+        <ion-buttons end *ngIf="!isLoggedIn">
+          <button ion-button icon-only color="royal" (click)="navigate()">
+            <ion-icon name="person-add"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-buttons end  *ngIf="isLoggedIn">
+            <button ion-button icon-only color="royal">
+              <ion-icon name="person"></ion-icon>
+            </button>
+        </ion-buttons>
+      </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1>Cab Travels</h1>
+    <p>Tejas Tours and Travels providing the car/cab rental service in Bangalore, Following us covers the local (bangalore) fare details of various types of car/cab we are renting to customers.</p> 
+    <p>For the purpose of cab/car outstation rental details and long term cab/car contract - customers can contact Tejas Tours and Travels.</p>
+     <h4>High Lights of Tejas Cabs</h4>
+     <ul style="font-size:12px;padding-left: 15px;">
+       <li>Dedicated to individualize service.</li>
+       <li>Service for corporate and public transportation</li>
+       <li>Short and long term renting.</li>
+      <li>Online booking of cabs with support.</li>
+      <li>Well trained chauffeurs.</li>
+      <li>24/7 service.</li>
+      <li>Corporate rentals.</li>
+      <li>City Tours</li>
+    </ul>
+</ion-content>

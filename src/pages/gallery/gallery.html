@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-toolbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <img class="main-logo" src="https://www.tejastravels.com/images/logo.png" alt="Logo"/>
+        <ion-buttons end *ngIf="!isLoggedIn">
+          <button ion-button icon-only color="royal" (click)="navigate()">
+            <ion-icon name="person-add"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-buttons end  *ngIf="isLoggedIn">
+            <button ion-button icon-only color="royal">
+              <ion-icon name="person"></ion-icon>
+            </button>
+        </ion-buttons>
+      </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  Coming Soon.......
+</ion-content>

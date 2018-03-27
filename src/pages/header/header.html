@@ -1,0 +1,26 @@
+
+  <!-- <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button> -->
+<ion-grid>
+        <ion-row>
+            <ion-col  col-10>
+                <div><img class="main-logo" src="https://www.tejastravels.com/images/logo.png" alt="Logo"/></div>
+              </ion-col>
+            <ion-col>
+                <div><ion-buttons end *ngIf="!isLoggedIn">
+                    <button ion-button icon-only color="royal" (click)="navigate()">
+                      <ion-icon name="person-add"></ion-icon>
+                    </button>
+                  </ion-buttons>
+                  <ion-buttons end  *ngIf="isLoggedIn">
+                      <button ion-button icon-only color="royal" (click)=openMenu()>
+                        <ion-icon name="person"></ion-icon>
+                      </button>
+                  </ion-buttons></div>
+              </ion-col>
+          </ion-row>
+  </ion-grid>
+
+
+

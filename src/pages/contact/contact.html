@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-toolbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <img class="main-logo" src="https://www.tejastravels.com/images/logo.png" alt="Logo"/>
+        <ion-buttons end *ngIf="!isLoggedIn">
+          <button ion-button icon-only color="royal" (click)="navigate()">
+            <ion-icon name="person-add"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-buttons end  *ngIf="isLoggedIn">
+            <button ion-button icon-only color="royal">
+              <ion-icon name="person"></ion-icon>
+            </button>
+        </ion-buttons>
+      </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h3 style='padding-bottom:10px;'>Contact Us</h3>
+    <h4>Administrative Office:</h4>
+    <p><b>Tejas Tours And Travels</b><br/>
+    # 02, "Shiva Garden",<br/> Opp B.M.T.C Bus Depot, <br/>
+    Old Madras Road, Hoskote,<br/>
+    Bangalore - 562 114,<br/>Karnataka, India.
+  </p>
+    
+    <p>
+      Mobile No's: <br/>
+      <span> +080 2790 6363</span>
+      <span>+080 2970 6363</span>
+      <br/>
+      <span class='clr-tejas'>Email:</span>&nbsp;info@tejastravels.com
+    </p>
+<br/><br/>
+    <h4>Branch Office:</h4>
+    <p>
+    <b>Tejas Tours And Travels</b><br/>
+    # 164, SP layout, 2nd Cross, <br/>
+    Varthur Main Road,<br/> Opposite Cotton World,<br/> Marathahalli Bridge,<br/> Bangalore - 560 037,
+    Karnataka, India.</p>
+    <p><span class='clr-tejas'>Mobile No's:</span> <span> +91 99802 77773</span><span>+91 98452 34343</span><br/>
+      <span class='clr-tejas'>Tel Phone & Fax:</span> 080 25400049</p>
+</ion-content>

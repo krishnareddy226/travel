@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-toolbar>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+            <page-header></page-header>
+        </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-slides style="height: 250px;" autoplay="3000" loop="true" speed="1000">
+      <ion-slide *ngFor="let image of slideImages">
+          <img src="{{image}}" style="height: auto;" />
+      </ion-slide>
+  </ion-slides>
+
+  <mat-card>
+      <mat-card-content>
+          <h3 style="color: #29abe3;">Travel Enquiry</h3>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-input-container class="full-width-input">
+              <input matInput placeholder="Your Name" formControlName="userName" required />
+              <mat-error *ngIf="isFieldInvalid('userName')"> Name is required</mat-error>
+            </mat-input-container>
+            <mat-input-container class="full-width-input">
+              <input type="number" maxlength="10" matInput  placeholder="Your Mobile No" formControlName="mobileNo" required />
+              <mat-error *ngIf="isFieldInvalid('mobileNo')"> Mobile Number is required </mat-error>
+            </mat-input-container>
+            <mat-input-container class="full-width-input">
+                <input type="email" matInput  placeholder="Enter Enail ID" formControlName="emailId" required />
+                <mat-error *ngIf="isFieldInvalid('emailId')"> Email is required </mat-error>
+            </mat-input-container>
+            <mat-input-container class="full-width-input">
+                <mat-select  formControlName="vehicleType" placeholder="Select Vehicle" required>
+                        <mat-option *ngFor="let vechile of vechiclesList" [value]="vechile">
+                          {{vechile}}
+                        </mat-option>
+                </mat-select>
+            </mat-input-container>
+            <mat-input-container class="full-width-input">
+                <input type="tel" matInput  placeholder="Pickup Point" formControlName="pickupPoint" required />
+                <mat-error *ngIf="isFieldInvalid('pickupPoint')"> PickupPoint is required </mat-error>
+            </mat-input-container>
+            <mat-input-container class="full-width-input">
+                <input type="tel" matInput  placeholder="Drop Point" formControlName="dropPoint" required />
+                <mat-error *ngIf="isFieldInvalid('dropPoint')"> DropPoint is required </mat-error>
+            </mat-input-container>
+            <mat-input-container class="full-width-input">
+                <textarea matInput placeholder="Enter Your Round Trip Details" formControlName="tripDetails"></textarea>
+            </mat-input-container>
+            <button ion-button block type="submit" class="selected">Submit</button>
+          </form>
+        </mat-card-content>
+  </mat-card>
+</ion-content>

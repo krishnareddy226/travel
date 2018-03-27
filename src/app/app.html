@@ -1,0 +1,41 @@
+<ion-menu [content]="content">
+  <ion-header>
+      <ion-toolbar color="primary">
+          <ion-title><img src="./assets/icon/favicon.ico" alt="Logo"></ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <ion-list>
+              <ion-item menuClose detail-none class="option" (click)="setHome()">
+                  <ion-icon name="home" item-left></ion-icon>
+                  Home
+              </ion-item>
+          <span  *ngFor="let item of pages; let i = index" no-padding>
+
+            <ion-item menuClose detail-none *ngIf="item.subItems.length == 0" class="option" (click)="openPage(item)">
+                <ion-icon *ngIf="item.iconName" [name]="item.iconName" item-left></ion-icon>
+                {{ item.title }}
+            </ion-item>
+
+            <span *ngIf="item.subItems.length > 0">
+                <ion-item detail-none class="option" (click)="toggleSection()">
+                 <ion-icon  [name]=" open === true ? 'ios-arrow-down' : 'ios-arrow-forward'" item-left></ion-icon>
+                  {{ item.title }} 
+                </ion-item> 
+                <ion-list  *ngFor="let child of item.subItems; let j = index">
+                    <ion-item menuClose class="option" (click)="openPage(child)" *ngIf="open" style="padding-left: 48px;">
+                        <ion-icon *ngIf="child.iconName" [name]="child.iconName" item-left></ion-icon>
+                        {{ child.title }}
+                    </ion-item>
+                </ion-list>
+                </span>
+
+          </span>
+        </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

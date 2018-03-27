@@ -1,0 +1,19 @@
+page-login {
+    .background {
+        background: linear-gradient(10deg,#4E5EFC,#4EE7FC)
+    }
+    .loading-md .spinner-crescent circle { stroke: #29abe3;}
+    mat-card {
+        max-width: 400px;
+        margin: 2em auto;
+        text-align: center;
+        box-shadow: none;
+      }
+      .signin-content {
+        padding: 60px 1rem;
+      }
+      .full-width-input {
+        width: 100%;
+      }
+}
+

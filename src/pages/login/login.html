@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-toolbar>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content>
+    <mat-card>
+      <mat-card-content>
+          <p>LOGIN</p>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-input-container class="full-width-input">
+              <input matInput placeholder="User" formControlName="userName" required />
+              <mat-error *ngIf="isFieldInvalid('userName')"> User name is required</mat-error>
+            </mat-input-container>
+            <mat-input-container class="full-width-input">
+              <input matInput type="password" placeholder="Password" formControlName="password" required />
+              <mat-error *ngIf="isFieldInvalid('userName')"> Password is required </mat-error>
+            </mat-input-container>
+            <button ion-button color="danger" block type="submit" outline>Login</button>
+            <p> <span style="color: #29abe3;"> Forgot Password</span></p>
+            <p id="sign" class="text-center text-muted" role="button">
+                <small>Don't have an account yet?<span style="color: #29abe3;"> Sign up</span></small>
+            </p>
+          </form>
+          <b> OR </b>
+          <button ion-button ion-left block style="color: #fff;background: royalblue;">
+            <ion-icon name="logo-facebook" ></ion-icon> &nbsp;&nbsp;
+            <div> Login with facebook </div>
+          </button>
+          <button ion-button color="danger" ion-left block>
+              <ion-icon name="logo-google"></ion-icon> &nbsp;&nbsp;
+              <div> Login with google </div>
+            </button>
+        </mat-card-content>
+  </mat-card>
+</ion-content>

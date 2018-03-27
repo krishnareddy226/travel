@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-toolbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <img class="main-logo" src="https://www.tejastravels.com/images/logo.png" alt="Logo"/>
+          <ion-buttons end *ngIf="!isLoggedIn">
+            <button ion-button icon-only color="royal" (click)="navigate()">
+              <ion-icon name="person-add"></ion-icon>
+            </button>
+          </ion-buttons>
+          <ion-buttons end  *ngIf="isLoggedIn">
+              <button ion-button icon-only color="royal">
+                <ion-icon name="person"></ion-icon>
+              </button>
+          </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <p>
+      <strong class='clr-tejas'>Cab Travels</strong> 
+      Tejas Tours and Travels providing the car/cab rental service in Bangalore, Following us covers the local (bangalore) fare details of various types of car/cab we are renting to customers. For the purpose of cab/car outstation rental details and long term cab/car, contact Tejas Tours and Travels. Dedicated to individualize service. Service for corporate and public transportation.
+    </p>
+    <p>
+        <strong class='clr-tejas'>Tempo Travels</strong> 
+        Travels - Tejas Tours and Travels providing the Tempo Traveller rental service in Bangalore, Following us covers the local (bangalore) fare details of tempo traveller we are renting to customers. For the purpose of tempo traveller outstation rental details and long term tempo traveller contact Tejas Tours and Travels. Good look and well maintained tempo traveller for safe journey. Ample Baggage space.
+    </p>
+</ion-content>
